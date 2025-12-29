@@ -87,6 +87,16 @@ def toggle_log():
         
     return jsonify({'status': status})
 
+@app.route('/api/debug-db')
+def debug_db():
+    try:
+        db = get_db()
+        db.execute('SELECT 1')
+        return jsonify({'status': 'ok', 'db_type': getattr(g, '_db_type', 'unknown')})
+    except Exception as e:
+        import traceback
+        return jsonify({'error': str(e), 'traceback': traceback.format_exc()}), 500
+
 if __name__ == '__main__':
     # Initialize DB if locally and it doesn't exist
     if not os.environ.get('DATABASE_URL') and not os.path.exists('habits.db'):
