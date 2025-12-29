@@ -4,7 +4,7 @@ A modern, dark-themed habit tracking web application built with Python (Flask) a
 
 ## 📸 Screenshots
 
-![Habit Tracker Dashboard](attachment:uploaded_image_1767033960472.png)
+![Habit Tracker Dashboard](screenshots/dashboard.png)
 _Modern, responsive, and data-driven dashboard._
 
 ## ✨ Features
