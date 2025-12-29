@@ -1,7 +1,14 @@
+```javascript
 async function fetchHabits() {
-  const response = await fetch("/api/habits");
-  const habits = await response.json();
-  renderHabits(habits);
+  try {
+    const response = await fetch("/api/habits");
+    if (!response.ok) throw new Error('Failed to fetch');
+    const habits = await response.json();
+    renderHabits(habits);
+  } catch (e) {
+    console.error(e);
+    alert('Error loading habits. Check console for details.');
+  }
 }
 
 function renderHabits(habits) {

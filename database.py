@@ -12,7 +12,7 @@ def get_db():
         db_url = os.environ.get('DATABASE_URL')
         if db_url:
             # PostgreSQL
-            conn = psycopg2.connect(db_url, cursor_factory=psycopg2.extras.RealDictCursor)
+            conn = psycopg2.connect(db_url, cursor_factory=psycopg2.extras.RealDictCursor, sslmode='require')
             g._db_type = 'postgres'
             db = g._database = conn
         else:
