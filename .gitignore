@@ -1,0 +1,11 @@
+# Ignore venv
+venv/
+
+# Ignore database file
+habits.db
+
+# Ignore logs
+logs
+
+# Ignore environment variables
+.env
