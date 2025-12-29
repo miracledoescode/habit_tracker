@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- Google Fonts for premium feel -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>My Habits</h1>
+        <p class="subtitle">Build your streaks, day by day.</p>
+      </header>
+
+      <div class="habit-input-container">
+        <input type="text" id="habitName" placeholder="New habit name..." />
+        <button onclick="addHabit()">Add Habit</button>
+      </div>
+
+      <div id="habitsList" class="habits-list">
+        <!-- Habits will be injected here -->
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
