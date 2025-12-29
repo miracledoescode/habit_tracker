@@ -1,4 +1,3 @@
-```javascript
 async function fetchHabits() {
   try {
     const response = await fetch("/api/habits");

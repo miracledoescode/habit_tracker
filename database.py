@@ -18,6 +18,7 @@ def get_db():
         else:
             # SQLite
             conn = sqlite3.connect(DATABASE)
+            conn.execute('PRAGMA foreign_keys = ON')
             conn.row_factory = sqlite3.Row
             g._db_type = 'sqlite'
             db = g._database = conn
